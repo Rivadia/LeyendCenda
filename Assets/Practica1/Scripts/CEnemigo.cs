@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CEnemigo : MonoBehaviour
+public class CEnemigo : Agente
 {
     public string Id;
     public string nombre;
@@ -18,6 +18,7 @@ public class CEnemigo : MonoBehaviour
 
         BusquedaEnemigo(Id);
 
+
     }
 
     private void BusquedaEnemigo(string id)
@@ -32,5 +33,12 @@ public class CEnemigo : MonoBehaviour
 
             }
         }
+    }
+
+
+
+    private void Update()
+    {
+        ConfigurarDestino(destino);
     }
 }
