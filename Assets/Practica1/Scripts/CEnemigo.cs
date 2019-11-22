@@ -8,7 +8,7 @@ public class CEnemigo : Agente
     public string nombre;
     public int vida;
     public int magia;
-    public float _vAgent;
+    public float _velocidadAgente;
 
     Animator anim;
     EnemigoB enemigoB;
@@ -17,7 +17,7 @@ public class CEnemigo : Agente
     // Start is called before the first frame update
     void Start()
     {
-        VelocidadAgente = _vAgent;
+        VelocidadAgente = _velocidadAgente;
         enemigoB = FindObjectOfType<EnemigoB>();
 
         BusquedaEnemigo(Id);
