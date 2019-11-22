@@ -21,29 +21,32 @@ public class Agente : MonoBehaviour
         
 
         Vector3 destinoFinal = new Vector3(d.position.x, this.transform.position.y, d.position.z);
-        ConfiguracionFreno(d, freno,aFreno);
+        ConfiguracionFreno(destinoFinal, freno,aFreno);
 
         transform.LookAt(destinoFinal);
 
-
-
-        if (accionarFreno==false)
-        {
-            transform.Translate(Vector3.forward * velocidad * Time.deltaTime);
-        }
+        
+       transform.Translate(Vector3.forward * velocidad * Time.deltaTime);
+        
         
 
     }
 
-    protected void ConfiguracionFreno(Transform d,float f, bool aF)
+    protected bool ConfiguracionFreno(Vector3 d,float f, bool aF)
     {
-        aFreno2 = aF;
-        float distancia = Vector3.Distance(transform.position, d.position);
+        float velocidadLocal = 1;
+        float distancia = Vector3.Distance(transform.position, d);
         Debug.Log(distancia);
 
         if (distancia < f)
         {
-            aF = true;
+            velocidad = 0;
+            return (true);
+        }
+        else
+        {
+            velocidad = velocidadLocal;
+            return (false);
         }
        
     }
