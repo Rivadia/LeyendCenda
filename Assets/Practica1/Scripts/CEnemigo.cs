@@ -8,16 +8,21 @@ public class CEnemigo : Agente
     public string nombre;
     public int vida;
     public int magia;
+    public float _vAgent;
+
+    Animator anim;
     EnemigoB enemigoB;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        VelocidadAgente = _vAgent;
         enemigoB = FindObjectOfType<EnemigoB>();
 
         BusquedaEnemigo(Id);
 
+        anim = GetComponent<Animator>();
 
     }
 
@@ -40,5 +45,10 @@ public class CEnemigo : Agente
     private void Update()
     {
         ConfigurarDestino(destino);
+
+        if (anim !=null)
+        {
+            anim.SetFloat("velocidad", VelocidadAgente);
+        }
     }
 }

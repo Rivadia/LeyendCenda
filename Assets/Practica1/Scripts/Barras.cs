@@ -23,11 +23,12 @@ public class Barras : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        barras[0].value = vidaEnemigo.vida;
+      
         if (vidaEnemigo.vida==0)
         {
             transform.parent.gameObject.SetActive(false);
         }
+        barras[0].value = vidaEnemigo.vida;
     }
 
     IEnumerator asignarvida()

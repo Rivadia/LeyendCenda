@@ -291,12 +291,17 @@ PrefabInstance:
     - target: {fileID: 3321763817479433852, guid: c31d8daa15717124cbc8b7f0068f9586,
         type: 3}
       propertyPath: freno
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3321763817479433852, guid: c31d8daa15717124cbc8b7f0068f9586,
         type: 3}
       propertyPath: aFreno
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3321763817479433852, guid: c31d8daa15717124cbc8b7f0068f9586,
+        type: 3}
+      propertyPath: _vAgent
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3321763818796849905, guid: c31d8daa15717124cbc8b7f0068f9586,
         type: 3}
@@ -314,6 +319,26 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3321763818751760213, guid: c31d8daa15717124cbc8b7f0068f9586,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208654753832550064, guid: c31d8daa15717124cbc8b7f0068f9586,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208654753132848702, guid: c31d8daa15717124cbc8b7f0068f9586,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208654753995640997, guid: c31d8daa15717124cbc8b7f0068f9586,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208654753995640997, guid: c31d8daa15717124cbc8b7f0068f9586,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

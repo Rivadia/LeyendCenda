@@ -4,14 +4,27 @@ using UnityEngine;
 
 public class Agente : MonoBehaviour
 {
-    [SerializeField]
-    protected float velocidad;
+    
+    private float velocidad;
     [SerializeField]
     protected Transform destino;
     [SerializeField]
     protected float freno;
 
-   
+    [SerializeField]
+    protected float VelocidadAgente{
+
+        get{
+            return velocidad;  
+           }
+        set
+        {
+            this.velocidad = value;
+        } 
+
+      }
+
+
 
     protected void ConfigurarDestino(Transform d)
     {
