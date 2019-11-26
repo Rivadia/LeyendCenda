@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class Agente : MonoBehaviour
 {
-    
+
     private float velocidad;
     [SerializeField]
     protected Transform destino;
     [SerializeField]
     protected float freno;
+    [SerializeField]
+    protected float distanciaMeta;
+
+    [SerializeField]
+   protected Transform objetivo;
+
+
 
     [SerializeField]
     protected float VelocidadAgente{
@@ -59,5 +66,29 @@ public class Agente : MonoBehaviour
             return (false);
         }
        
+    }
+
+    protected float MedirDistancia()
+    {
+        Vector3 metaPos = new Vector3(objetivo.position.x, this.transform.position.y, objetivo.position.z);
+        float distancia = Vector3.Distance(transform.position, metaPos);
+        Debug.Log(distancia);
+        return distancia; 
+               
+    }
+
+    protected bool MedirDistanciaBool()
+    {
+        Vector3 metaPos = new Vector3(objetivo.position.x, this.transform.position.y, objetivo.position.z);
+        float distancia = Vector3.Distance(transform.position, metaPos);
+
+        if (distancia < distanciaMeta)
+            return true;
+        else
+            return false;
+
+
+        
+
     }
 }

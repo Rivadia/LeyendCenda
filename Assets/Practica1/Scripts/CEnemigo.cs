@@ -11,7 +11,8 @@ public class CEnemigo : Agente
     public float _velocidadAgente;
 
     Animator anim;
-    EnemigoB enemigoB;
+    protected EnemigoB enemigoB;
+   
 
 
     // Start is called before the first frame update
@@ -23,10 +24,12 @@ public class CEnemigo : Agente
         BusquedaEnemigo(Id);
 
         anim = GetComponent<Animator>();
+        destino= GameObject.Find("Destino").GetComponent<Transform>();
+        objetivo = GameObject.Find("Destino").GetComponent<Transform>();
 
     }
 
-    private void BusquedaEnemigo(string id)
+    public void BusquedaEnemigo(string id)
     {
         for (int i = 0; i < enemigoB.enemigo.Count; i++)
         {
@@ -44,7 +47,23 @@ public class CEnemigo : Agente
 
     private void Update()
     {
-        ConfigurarDestino(destino);
+         
+
+        if (MedirDistanciaBool())
+        {
+            ConfigurarDestino(destino);
+            if (MedirDistancia() <= freno)
+            {
+           
+                Debug.Log("Toma");
+            }
+        }
+        else if (!MedirDistanciaBool())
+        {
+            VelocidadAgente = 0;
+        }
+       
+
 
         if (anim !=null)
         {
