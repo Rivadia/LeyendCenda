@@ -5,7 +5,7 @@ using UnityEngine;
 public class Agente : MonoBehaviour
 {
 
-    private float velocidad;
+    protected float velocidad;//No le hagas caso
     [SerializeField]
     protected Transform destino;
     [SerializeField]
@@ -29,7 +29,7 @@ public class Agente : MonoBehaviour
             this.velocidad = value;
         } 
 
-      }
+      }//No le hagas caso
 
 
 
@@ -68,7 +68,7 @@ public class Agente : MonoBehaviour
        
     }
 
-    protected float MedirDistancia()
+    protected float MedirDistanciaFloat()
     {
         Vector3 metaPos = new Vector3(objetivo.position.x, this.transform.position.y, objetivo.position.z);
         float distancia = Vector3.Distance(transform.position, metaPos);
@@ -86,9 +86,6 @@ public class Agente : MonoBehaviour
             return true;
         else
             return false;
-
-
-        
 
     }
 }

@@ -11,12 +11,12 @@ public class Skeleto : Agente
     public float _velocidadAgente;
 
     Animator anim;
-    protected EnemigoB enemigoB;
+    EnemigoB enemigoB;
   
     // Start is called before the first frame update
     void Start()
     {
-        VelocidadAgente = _velocidadAgente;
+        VelocidadAgente = velocidad;
         enemigoB = FindObjectOfType<EnemigoB>();
 
         BusquedaEnemigo(Id);
@@ -48,9 +48,10 @@ public class Skeleto : Agente
         if (MedirDistanciaBool())
         {
             ConfigurarDestino(destino);
-            if (MedirDistancia() <= freno)
+
+            if (MedirDistanciaFloat() <= freno)
             {
-                Debug.Log("Toma");
+                Debug.Log("Tomaaaaa");
                 anim.SetBool("Ataque", true);
 
             }

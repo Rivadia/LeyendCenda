@@ -52,7 +52,7 @@ public class CEnemigo : Agente
         if (MedirDistanciaBool())
         {
             ConfigurarDestino(destino);
-            if (MedirDistancia() <= freno)
+            if (MedirDistanciaFloat() <= freno)
             {
            
                 Debug.Log("Toma");
