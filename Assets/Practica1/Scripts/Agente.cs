@@ -11,39 +11,34 @@ public class Agente : MonoBehaviour
     [SerializeField]
     protected float freno;
 
-    public bool aFreno;
-    public bool aFreno2;
+    
 
     protected void ConfigurarDestino(Transform d)
     {
 
-        bool accionarFreno=aFreno;
-        
-
         Vector3 destinoFinal = new Vector3(d.position.x, this.transform.position.y, d.position.z);
-        ConfiguracionFreno(d, freno,aFreno);
+        ConfiguracionFreno(destinoFinal, freno);
 
         transform.LookAt(destinoFinal);
-
-
-
-        if (accionarFreno==false)
-        {
-            transform.Translate(Vector3.forward * velocidad * Time.deltaTime);
-        }
-        
+        transform.Translate(Vector3.forward * velocidad * Time.deltaTime);        
 
     }
 
-    protected void ConfiguracionFreno(Transform d,float f, bool aF)
+    protected bool ConfiguracionFreno(Vector3 d,float f)
     {
-        aFreno2 = aF;
-        float distancia = Vector3.Distance(transform.position, d.position);
-        Debug.Log(distancia);
+        float velocidadLocal = 1;
+        float distancia = Vector3.Distance(transform.position, d);
+       
 
         if (distancia < f)
         {
-            aF = true;
+            velocidad = 0;
+            return (true);
+        }
+        else
+        {
+            velocidad = velocidadLocal;
+            return (false);
         }
        
     }

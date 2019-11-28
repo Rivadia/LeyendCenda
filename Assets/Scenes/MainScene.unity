@@ -291,7 +291,7 @@ PrefabInstance:
     - target: {fileID: 3321763817479433852, guid: c31d8daa15717124cbc8b7f0068f9586,
         type: 3}
       propertyPath: freno
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3321763818796849905, guid: c31d8daa15717124cbc8b7f0068f9586,
         type: 3}

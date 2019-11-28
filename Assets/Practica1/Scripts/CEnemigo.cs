@@ -9,7 +9,7 @@ public class CEnemigo : Agente
     public int vida;
     public int magia;
     EnemigoB enemigoB;
-
+    Animator animConejo;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +17,8 @@ public class CEnemigo : Agente
         enemigoB = FindObjectOfType<EnemigoB>();
 
         BusquedaEnemigo(Id);
+
+        animConejo = GetComponent<Animator>();
 
 
     }
@@ -40,5 +42,8 @@ public class CEnemigo : Agente
     private void Update()
     {
         ConfigurarDestino(destino);
+
+        animConejo.SetFloat("velocidad", velocidad);
+
     }
 }
